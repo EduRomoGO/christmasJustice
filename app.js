@@ -17,15 +17,6 @@ app.get('/', function(req, res) {
 	res.sendfile('views/index.html');
 })
 
-app.post('/bet', function(req, res) {
-	console.log(req.body);
-
-	var betResults = {};
-	var betResultsString = JSON.stringify(betResults, null, 4);
-	// tae = myCalc.calculateTae(req.body.tin, req.body.paymentFrequency);
-	res.send({'betResults': betResultsString});
-});
-
 app.get('/question', function (req, res) {
 	res.send(sentencesDispatcher.dispatchSentence());
 });

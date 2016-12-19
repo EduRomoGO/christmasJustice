@@ -3,6 +3,7 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
+	sentencesDispatcher = require('./services/sentencesDispatcher.js'),
 	port = 1199;
 
 app.set('views', __dirname + '/views');
@@ -23,6 +24,10 @@ app.post('/bet', function(req, res) {
 	var betResultsString = JSON.stringify(betResults, null, 4);
 	// tae = myCalc.calculateTae(req.body.tin, req.body.paymentFrequency);
 	res.send({'betResults': betResultsString});
+});
+
+app.get('/question', function (req, res) {
+	res.send(sentencesDispatcher.dispatchSentence());
 });
 
 app.listen(process.env.PORT || port, function() {

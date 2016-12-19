@@ -1,0 +1,36 @@
+{
+  "name": "ChristmasJustice",
+  "version": "1.0.0",
+  "description": "Node version of the original ChristmasJustice (cunadismo) created by quinHD (developer), David (pending github username) (designer) and myself (developer)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o front/js/build/bundle.js",
+    "watch": "watchify -t [ babelify --presets [ react ] ] src/index.js -o front/js/build/bundle.js"
+  },
+  "author": "EduRomoGO",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "nodemon": "^1.9.1"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
+    "browserify": "^13.0.1",
+    "express": "latest",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "require": "latest",
+    "watchify": "^3.7.0"
+  },
+  "engines": {
+    "node": "4.4.2"
+  }
+}

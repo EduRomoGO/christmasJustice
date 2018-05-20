@@ -7,7 +7,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
     mode: 'development',
-    entry: './src/punishmentSuccess.js',
+    entry: './src/show.js',
     output: {
         path: __dirname,
         publicPath: '/',

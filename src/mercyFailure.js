@@ -1,34 +1,27 @@
-var text;
-var game = new Phaser.Game("100", "100", Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+const game = new Phaser.Game("100", "100", Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
 function preload() {
     game.load.spritesheet('risa', '../static/resources/risa.png', 1040, 740, 2);
     game.load.spritesheet('button', '../static/resources/button_sprite_sheet.png', 193, 71);
 }
 
-var mummy;
-var anim;
-var loopText;
-var punish;
-var mercy;
-// var text;
-var style;
-var currentQuestion;
+const addText = () => {
+    const textStyle = { font: "bold 48px", fill: "#fff", wordWrap: true, wordWrapWidth: 490, align: "center" };
+    game.add.text(200, 900, 'Fallaste burlancaster!!', textStyle);
+}
 
 function create() {
-    risa = game.add.sprite(0, 0, 'risa', 18);
-    risa.scale.set(1);
-    risa.smoothed = false;
-    anim = risa.animations.add('walk');
-    anim.onLoop.add(animationLooped, this);
-    // text = game.add.text(30, 350, 'Fallaste burlancaster', style);
+    addText();
 
-    anim.play(5, true);
+    const laugh = game.add.sprite(-300, 100, 'risa');
+    const laughAnimation = laugh.animations.add('laugh', null, 5, true);
+    laughAnimation.onLoop.add(animationLooped, this);
+
+    laughAnimation.play();
 }
 
 function animationLooped(sprite, animation) {
     if (animation.loopCount === 10) {
-        style = { font: "bold 24px fedra", fill: "#fff", wordWrap: true, wordWrapWidth: 490, align: "center" };
         nextAction();
     }
 }

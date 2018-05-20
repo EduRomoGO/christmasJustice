@@ -7,7 +7,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
     mode: 'development',
-    entry: './src/show.js',
+    entry: './src/mercyFailure.js',
     output: {
         path: __dirname,
         publicPath: '/',

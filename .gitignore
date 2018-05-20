@@ -84,3 +84,4 @@ borrador.txt
 # Ignore bower components
 /bower_components
 
+static/js/build/**

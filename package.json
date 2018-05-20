@@ -1,22 +1,27 @@
 {
-  "name": "ChristmasJustice",
+  "name": "christmas-justice",
   "version": "1.0.0",
   "description": "Node version of the original ChristmasJustice (cunadismo) created by quinHD (developer), David (pending github username) (designer) and myself (developer)",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o front/js/build/bundle.js",
-    "watch": "watchify -t [ babelify --presets [ react ] ] src/index.js -o front/js/build/bundle.js"
+    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o static/js/build/bundle.js",
+    "watch": "watchify -t [ babelify --presets [ react ] ] src/index.js -o static/js/build/bundle.js",
+    "start:dev": "webpack-dev-server"
   },
   "author": "EduRomoGO",
   "license": "UNLICENSED",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-jshint": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
-    "nodemon": "^1.9.1"
+    "nodemon": "^1.9.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "babel-preset-react": "^6.5.0",
@@ -25,6 +30,7 @@
     "bower": "^1.7.7",
     "browserify": "^13.0.1",
     "express": "latest",
+    "path": "^0.12.7",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "require": "latest",

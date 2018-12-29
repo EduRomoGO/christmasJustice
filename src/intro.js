@@ -1,10 +1,13 @@
 // var audio = new Audio('../static/resources/07_joy_to_the_world.mp3');
 // audio.play();
 
-var game = new Phaser.Game("100", "100", Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+import { mercyFailure, preload as pr } from './mercyFailureModule.js';
+
+var game = new Phaser.Game("100", "100", Phaser.AUTO, 'christmas-justice', { preload, create, update });
 
 function preload() {
     game.load.spritesheet('nextButton', '../static/resources/siguiente.sprite_sheet.png', 200, 70);
+    pr(game);
 }
 
 var mummy;
@@ -39,10 +42,9 @@ var lineIndex = 0;
 var wordDelay = 120;
 var lineDelay = 400;
 
+let next;
+
 function create() {
-
-
-
     game.stage.backgroundColor = "#e4a724";
 
     // mummy = game.add.sprite(20, 100, 'mummy', 5);
@@ -59,8 +61,15 @@ function create() {
     nextLine();
 }
 
+const showMercy = () => {
+    letter.destroy();
+    next.destroy();
+    game.stage.destroy();
+    mercyFailure(game);
+}
+
 function nextAction() {
-    window.location.href = "#{ player_game_path(@player, @game)}";
+    showMercy();
 }
 
 function update() {

@@ -29,7 +29,7 @@ const mercyFailure = game => {
 function animationLooped(sprite, animation, game) {
     if (animation.loopCount >= 1) {
         animation.stop();
-        // laugh.destroy();
+        // sprite.destroy();
         setLooserFinal(game);
     }
 }

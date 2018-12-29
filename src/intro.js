@@ -52,9 +52,9 @@ function create() {
 
     // anim.play(10, true);
 
-    // style = { font: "bold 24px fedra", fill: "red", wordWrap: true, wordWrapWidth: 350 , align: "left"};
+    // style = { font: "bold 24px", fill: "red", wordWrap: true, wordWrapWidth: 350 , align: "left"};
     // text = game.add.text(0, 0, "snateuhosa aoenuh", style);
-    letter = game.add.text(32, 80, '', { font: "36px fedra", fill: "#352114" });
+    letter = game.add.text(32, 80, '', { font: "36px", fill: "#352114" });
 
     nextLine();
 }

@@ -5,8 +5,8 @@ function preload(game) {
 }
 
 const setLooserFinal = game => {
-    const tilesprite = game.add.tileSprite(0, 0, 289, 187, 'looserFinal');
-    tilesprite.scale.set(3.5);
+    const looserFinalSprite = game.add.sprite(0, 0, 'looserFinal');
+    looserFinalSprite.scale.set(3.5);
 }
 
 const addText = game => {
@@ -20,16 +20,16 @@ const mercyFailure = game => {
     addText(game);
 
     laugh = game.add.sprite(-300, 100, 'risa');
-    const laughAnimation = laugh.animations.add('laughAnimation', null, 5, true, 3);
+    const laughAnimation = laugh.animations.add('laughAnimation', null, 5, true);
     laughAnimation.onLoop.add(animationLooped, this, null, game);
 
     laughAnimation.play();
 }
 
 function animationLooped(sprite, animation, game) {
-    if (animation.loopCount >= 3) {
+    if (animation.loopCount >= 1) {
         animation.stop();
-        laugh.destroy();
+        // laugh.destroy();
         setLooserFinal(game);
     }
 }

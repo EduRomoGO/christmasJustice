@@ -1,10 +1,10 @@
-var audio = new Audio('/07_joy_to_the_world.mp3');
-audio.play();
+// var audio = new Audio('../static/resources/07_joy_to_the_world.mp3');
+// audio.play();
 
 var game = new Phaser.Game("100", "100", Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
 function preload() {
-    game.load.spritesheet('nextButton', '/siguiente.sprite_sheet.png', 200, 70);
+    game.load.spritesheet('nextButton', '../static/resources/siguiente.sprite_sheet.png', 200, 70);
 }
 
 var mummy;
@@ -15,17 +15,17 @@ var mercy;
 var text;
 var letter;
 var content = [
-    'Querido Santa',
-    '',
-    'Este año me he portado muy bien',
-    'y he aprobado todo, incluso las mates.',
-    'Me gustaria que me trajeses una bici,',
-    'y tambien una consola, pero sobre todo,',
-    'quiero que me libres de los cuñados,',
-    'por favor Santa !! ',
-    'no quiero que me den mas la turra !!',
-    '',
-    'Atentamente',
+    // 'Querido Santa',
+    // '',
+    // 'Este año me he portado muy bien',
+    // 'y he aprobado todo, incluso las mates.',
+    // 'Me gustaria que me trajeses una bici,',
+    // 'y tambien una consola, pero sobre todo,',
+    // 'quiero que me libres de los cuñados,',
+    // 'por favor Santa !! ',
+    // 'no quiero que me den mas la turra !!',
+    // '',
+    // 'Atentamente',
     'Justice boy'
 ];
 var style;
@@ -69,7 +69,6 @@ function update() {
 
 
 function nextLine() {
-
     if (lineIndex === content.length) {
         next = game.add.button(40, 650, 'nextButton', nextAction, this, 0, 1);
         return;

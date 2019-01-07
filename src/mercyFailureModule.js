@@ -20,17 +20,22 @@ const mercyFailure = game => {
     addText(game);
 
     laugh = game.add.sprite(-300, 100, 'risa');
-    const laughAnimation = laugh.animations.add('laughAnimation', null, 5, true);
+    const laughAnimation = laugh.animations.add('laughAnimation');
     laughAnimation.onLoop.add(animationLooped, this, null, game);
+    laughAnimation.onComplete.add(laughStopped, this, null, game);
 
-    laughAnimation.play();
+    laughAnimation.play(5, true, true);
 }
 
+const laughStopped = (sprite, animation, game) => {
+    // animation.stop();
+    // sprite.destroy();
+    setLooserFinal(game);
+};
+
 function animationLooped(sprite, animation, game) {
-    if (animation.loopCount >= 1) {
-        animation.stop();
-        // sprite.destroy();
-        setLooserFinal(game);
+    if (animation.loopCount >= 4) {
+        animation.loop = false;
     }
 }
 
